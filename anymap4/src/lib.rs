@@ -1,3 +1,6 @@
+// Copyright 2026 the Anymore Authors
+// SPDX-License-Identifier: Apache-2.0 OR MIT
+
 //! This crate provides a safe and convenient store for one value of each type.
 //!
 //! Your starting point is [`Map`]. It has an example.
