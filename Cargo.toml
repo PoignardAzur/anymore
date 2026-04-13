@@ -1,6 +1,6 @@
 [workspace]
 resolver = "2"
-members = ["anymap3", "anymore"]
+members = ["anymap4", "anymore"]
 
 [workspace.package]
 # Anymore's version, also used by other packages which want to mimic Anymore's version.
