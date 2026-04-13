@@ -19,7 +19,7 @@
     doc = " - **std** (default, *disabled* in this build):"
 )]
 //!   an implementation using `std::collections::hash_map`, placed in the crate root
-//!   (e.g. `anymap3::AnyMap`).
+//!   (e.g. `anymap4::AnyMap`).
 //!
 #![cfg_attr(
     feature = "hashbrown",
@@ -30,7 +30,7 @@
     doc = " - **hashbrown** (optional; *disabled* in this build):"
 )]
 //!   an implementation using `alloc` and `hashbrown::hash_map`, placed in a module `hashbrown`
-//!   (e.g. `anymap3::hashbrown::AnyMap`).
+//!   (e.g. `anymap4::hashbrown::AnyMap`).
 
 #![warn(missing_docs, unused_results)]
 #![cfg_attr(not(feature = "std"), no_std)]
@@ -88,7 +88,7 @@ macro_rules! everything {
         /// ## Example
         ///
         /// (Here using the [`AnyMap`] convenience alias; the first line could use
-        /// <code>[anymap3::Map][Map]::&lt;[core::any::Any]&gt;::new()</code> instead if desired.)
+        /// <code>[anymap4::Map][Map]::&lt;[core::any::Any]&gt;::new()</code> instead if desired.)
         ///
         /// ```rust
         #[doc = $example_init]
@@ -589,7 +589,7 @@ macro_rules! everything {
 }
 
 #[cfg(feature = "std")]
-everything!("let mut data = anymap3::AnyMap::new();", std::collections);
+everything!("let mut data = anymap4::AnyMap::new();", std::collections);
 
 #[cfg(feature = "hashbrown")]
 /// AnyMap backed by `hashbrown`.
@@ -601,7 +601,7 @@ pub mod hashbrown {
     use crate::TypeIdHasher;
 
     everything!(
-        "let mut data = anymap3::hashbrown::AnyMap::new();",
+        "let mut data = anymap4::hashbrown::AnyMap::new();",
         hashbrown,
         BuildHasherDefault<TypeIdHasher>
     );
